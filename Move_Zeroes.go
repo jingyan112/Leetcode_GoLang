@@ -1,19 +1,32 @@
 /*
-Leetcode link: https://leetcode.com/problems/rotate-array/
-Submission result:
+Leetcode link: https://leetcode.com/problems/move-zeroes/
+Submission result: Success
+Details
+Runtime: 37 ms, faster than 48.47% of Go online submissions for Move Zeroes.
+Memory Usage: 7.2 MB, less than 37.85% of Go online submissions for Move Zeroes.
 */
+
 package main
 
 import "fmt"
 
-func rotate(nums []int, k int) []int {
-	for i := 1; i <= k; i++ {
-		nums = append(nums[len(nums)-1:len(nums)], nums[0:len(nums)-1]...)
+func moveZeroes(nums []int) []int {
+	maxLength := len(nums)
+	if maxLength == 1 {
+		return nums
+	}
+	for i := 0; i < maxLength; i++ {
+		if nums[i] == 0 {
+			nums = append(nums[0:i], append(nums[i+1:len(nums)], 0)...)
+			i--
+			maxLength--
+		}
 	}
 	return nums
 }
 
 func main() {
-	fmt.Println(rotate([]int{1, 2, 3, 4, 5, 6, 7}, 3))
-	fmt.Println(rotate([]int{-1, -100, 3, 99}, 2))
+	fmt.Println(moveZeroes([]int{0, 1, 0, 3, 12}))
+	fmt.Println(moveZeroes([]int{2, 1, 0, 3, 12, 0}))
+	fmt.Println(moveZeroes([]int{0}))
 }
