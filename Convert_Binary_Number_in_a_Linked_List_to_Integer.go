@@ -1,5 +1,5 @@
 /*
-Leetcode link: https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/submissions/
+Leetcode link: https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer
 Submission result: Success
 Details
 Runtime: 4 ms, faster than 27.27% of Go online submissions for Convert Binary Number in a Linked List to Integer.
