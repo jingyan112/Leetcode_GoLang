@@ -10,6 +10,7 @@ package main
 import "fmt"
 
 func isSubsequence(s string, t string) bool {
+	// Test
 	indexS := 0
 	indexT := 0
 	for indexS < len(s) && indexT < len(t) {
